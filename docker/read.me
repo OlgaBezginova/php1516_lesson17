@@ -1,0 +1,26 @@
+start project
+    docker-compose up
+    docker-compose up --build
+stop project
+    docker-compose stop
+    docker-compose down
+kill project
+    docker-compose kill
+    docker-compose down --rm=all
+
+web
+    http://localhost:8083
+
+mysql:
+    login root
+    pass cbece_gead-cebfa
+
+docker bash:
+    docker exec -it mydocker_php /bin/bash
+
+Run test
+    docker exec -it mydocker_php phpunit
+    docker exec -it mydocker_php phpunit --coverage-html ./coverage
+
+Problem private
+    sudo chown -R $USER server
