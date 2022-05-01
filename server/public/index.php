@@ -76,8 +76,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $success_msg = $success_text;
     }
 }
+?>
 
-echo '<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -97,21 +98,21 @@ echo '<!DOCTYPE html>
                 <form method="post" action="index.php">
                     <div class="form-group">
                         <label for="name"><strong>Name*</strong></label>
-                        <input type="text" name="name" class="form-control" id="name" placeholder="Enter your name" value="' . $name. '">
-                    </div>'
-                    . $name_msg .
-                    '<div class="form-group">
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Enter your name" value="<?php echo $name; ?>">
+                    </div>
+                    <?php echo $name_msg; ?>
+                    <div class="form-group">
                         <label for="review"><strong>Review*</strong></label>
-                        <textarea name="review" class="form-control" id="review" placeholder="Say something" rows="5">' . $review . '</textarea>
-                    </div>'
-                    . $review_msg .
-                    '<div class="form-group">
+                        <textarea name="review" class="form-control" id="review" placeholder="Say something" rows="5"><?php echo $review; ?></textarea>
+                    </div>
+                    <?php echo $review_msg; ?>
+                    <div class="form-group">
                         <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>'
-                    . $success_msg .
-                '</form>
+                    </div>
+                    <?php echo $success_msg; ?>
+                </form>
             </div>
         </div>
     </div>
 </body>
-</html>';
+</html>
